@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+
+kind: Deployment
+metadata:
+  name: web-application
+
+spec:
+  selector:
+      matchLabels:
+        app: web-application
+  template:
+    metadata:
+      labels:
+        app: web-application
+    spec:
+      containers:
+      - name: web-application
+        image: amandatse/6.1p-web-application:latest
+        ports:
+        - containerPort: 3000
+
+
+#Detailed Documentation:
+#1. Specified the API version.
+#2. Defined the kind "Deployment" and named it "web-application".
+#3. Configured the selector to match the "web-application" app and pod template with labels and container settings.
